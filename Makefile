@@ -67,4 +67,5 @@ run: $(_BDIR)/$(_PROJ)
 # Delete all binaries and any editor backups of source and header files
 clean:
 	echo -e "EZmakefile: cleaning up" && \
-	rm -rf $(_BDIR) $(_SDIR)/*~ $(_HDIR)/*~
+	rm -rf  $(_SDIR)/*~ $(_HDIR)/*~  && \
+	find bin/obj -type f -name '*.o' -exec rm {} \;
